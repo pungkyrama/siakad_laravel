@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('extracurricular_students', function (Blueprint $table) {            
+        Schema::create('extracurricular_student', function (Blueprint $table) {            
             $table->foreignId('extracurricular_id')->constrained()->onDelete('cascade');
             $table->foreignId('student_id')->constrained()->onDelete('cascade');
             $table->primary(['extracurricular_id', 'student_id']);
-            $table->date('joined_date')->nullable();
+            $table->date('joined_at')->nullable();
             $table->string('role')->default('member');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('extracurricular_students');
+        Schema::dropIfExists('extracurricular_student');
     }
 };

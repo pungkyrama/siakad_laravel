@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description')->nullable();
-            $table->integer('max_member')->default(50);
+            $table->integer('max_members')->default(50);
             $table->timestamps();
         });
     }
