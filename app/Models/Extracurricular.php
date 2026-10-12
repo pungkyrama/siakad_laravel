@@ -13,8 +13,6 @@ class Extracurricular extends Model
     
     public function students()
     {
-        return $this->belongsToMany(Student::class, 'extracurricular_student')
-            ->withPivot('joined_at', 'role')
-            ->withTimestamps();
+        return $this->belongsToMany(Student::class, 'extracurricular_student')->withPivot('joined_at', 'role')->withTimestamps();
     }
 }

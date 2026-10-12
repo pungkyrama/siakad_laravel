@@ -23,9 +23,7 @@ class Student extends Model
  
     public function courses()
     {
-        return $this->belongsToMany(Course::class, 'enrollments')
-            ->withPivot('academic_year', 'semester', 'status')
-            ->withTimestamps();
+        return $this->belongsToMany(Course::class, 'enrollments')->withPivot('academic_year', 'semester', 'status')->withTimestamps();
     }
     
     public function submissions()
@@ -40,8 +38,6 @@ class Student extends Model
     
     public function extracurriculars()
     {
-        return $this->belongsToMany(Extracurricular::class, 'extracurricular_student')
-            ->withPivot('joined_at', 'role')
-            ->withTimestamps();
+        return $this->belongsToMany(Extracurricular::class, 'extracurricular_student')->withPivot('joined_at', 'role')->withTimestamps();
     }
 }

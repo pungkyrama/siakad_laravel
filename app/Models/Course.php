@@ -38,14 +38,11 @@ class Course extends Model
     
     public function students()
     {
-        return $this->belongsToMany(Student::class, 'enrollments')
-            ->withPivot('academic_year', 'semester', 'status')
-            ->withTimestamps();
+        return $this->belongsToMany(Student::class, 'enrollments')->withPivot('academic_year', 'semester', 'status')->withTimestamps();
     }
     
     public function tags()
     {
-        return $this->belongsToMany(Tag::class, 'course_tag')
-            ->withTimestamps();
+        return $this->belongsToMany(Tag::class, 'course_tag')->withTimestamps();
     }
 }

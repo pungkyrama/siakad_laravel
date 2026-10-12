@@ -17,7 +17,10 @@ class Announcement extends Model
             'is_published' => 'boolean',
         ];
     }
-    
+
+
+
+
     public function user()
     {
         return $this->belongsTo(User::class);

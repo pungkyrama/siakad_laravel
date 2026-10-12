@@ -42,8 +42,7 @@ class TagController extends Controller
 
         Tag::create($validated);
 
-        return redirect()->route('tags.index')
-            ->with('success', 'Tag berhasil ditambahkan.');
+        return redirect()->route('tags.index')->with('success', 'Tag berhasil ditambahkan.');
     }
 
     
@@ -79,8 +78,7 @@ class TagController extends Controller
 
         $tag->update($validated);
 
-        return redirect()->route('tags.index')
-            ->with('success', 'Tag berhasil diupdate.');
+        return redirect()->route('tags.index')->with('success', 'Tag berhasil diupdate.');
     }
 
     
@@ -91,7 +89,6 @@ class TagController extends Controller
 
         $tag->delete();
 
-        return redirect()->route('tags.index')
-            ->with('success', 'Tag berhasil dihapus.');
+        return redirect()->route('tags.index')->with('success', 'Tag berhasil dihapus.');
     }
 }

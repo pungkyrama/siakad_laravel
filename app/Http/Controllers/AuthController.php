@@ -6,14 +6,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
-{
-    /// Menampilkan semua yang ada dalam login
+{  
+
     public function showLoginForm()
     {
         return view('auth.login');
     }
 
-    /// Proses login
+    
+    
     public function login(Request $request)
     {
         $credentials = $request->validate([
